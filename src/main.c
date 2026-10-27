@@ -4,8 +4,7 @@ int main(void)
 {
     const int screenWidth = 800;
     const int screenHeight = 450;
-    int x = 400;
-    int y = 225;
+    Vector2 pos = {400, 225};
 
 
     InitWindow(screenWidth, screenHeight, "rov-rl-env");
@@ -17,18 +16,18 @@ int main(void)
         ClearBackground(RAYWHITE);
         // DrawText("Hello, raylib!", 190, 200, 20, LIGHTGRAY);
         if(IsKeyDown(KEY_UP)) {
-            y -= 4;
+            pos.y -= 4;
         }
         if(IsKeyDown(KEY_DOWN)) {
-            y += 4;
+            pos.y += 4;
         }
         if(IsKeyDown(KEY_RIGHT)) {
-            x += 4;
+            pos.x += 4;
         }
         if(IsKeyDown(KEY_LEFT)) {
-            x -= 4;
+            pos.x -= 4;
         }
-        DrawCircle(x, y, 40, DARKBLUE);
+        DrawCircleV(pos, 40, DARKBLUE);
         EndDrawing();
     }
 
